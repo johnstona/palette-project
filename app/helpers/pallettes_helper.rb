@@ -1,0 +1,2 @@
+module PallettesHelper
+end

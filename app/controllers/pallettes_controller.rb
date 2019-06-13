@@ -1,0 +1,2 @@
+class PallettesController < ApplicationController
+end
