@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
   belongs_to :user
-  belongs_to :pallette
+  belongs_to :palette
 end

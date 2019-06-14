@@ -1,2 +1,2 @@
-module PallettesHelper
+module PalettesHelper
 end

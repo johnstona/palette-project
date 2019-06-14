@@ -1,6 +1,6 @@
-class CreatePallettes < ActiveRecord::Migration[5.2]
+class CreatePalettes < ActiveRecord::Migration[5.2]
   def change
-    create_table :pallettes do |t|
+    create_table :palettes do |t|
       t.references :user, foreign_key: true
 
       t.timestamps

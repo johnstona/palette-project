@@ -1,3 +1,3 @@
 class Colour < ApplicationRecord
-  belongs_to :pallette
+  belongs_to :palette
 end

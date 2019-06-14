@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PalletteTest < ActiveSupport::TestCase
+class PaletteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

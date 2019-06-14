@@ -1,5 +1,5 @@
 class User < ApplicationRecord
     has_many :likes
     has_many :comments
-    has_many :pallettes
+    has_many :palettes
 end

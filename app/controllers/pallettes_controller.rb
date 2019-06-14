@@ -1,2 +1,2 @@
-class PallettesController < ApplicationController
+class PalettesController < ApplicationController
 end

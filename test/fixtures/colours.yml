@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  pallette: one
+  palette: one
 
 two:
-  pallette: two
+  palette: two

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PallettesControllerTest < ActionDispatch::IntegrationTest
+class PalettesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
