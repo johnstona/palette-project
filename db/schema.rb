@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_133214) do
+ActiveRecord::Schema.define(version: 2019_06_13_135313) do
+
+  create_table "colours", force: :cascade do |t|
+    t.integer "palette_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["palette_id"], name: "index_colours_on_palette_id"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
