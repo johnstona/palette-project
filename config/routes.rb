@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
+  get '/', to: 'palettes#index'
+
   resources :colours
   resources :comments
   resources :likes
