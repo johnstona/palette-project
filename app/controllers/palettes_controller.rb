@@ -3,7 +3,7 @@ class PalettesController < ApplicationController
     before_action :find_palette, only: [:show, :edit, :destroy]
 
     def new
-        @palette = Palette.new
+      @palette = Palette.new
     end
 
     def create
@@ -42,7 +42,7 @@ class PalettesController < ApplicationController
     private
 
     def palette_params
-        params.require(:palette).permit(:user_id)
+        params.require(:palette).permit(:user_id, :title, colours_attributes: [])
     end
 
     def find_palette

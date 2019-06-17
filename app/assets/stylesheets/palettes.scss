@@ -1,0 +1,24 @@
+.create_page_container {
+
+  width: 100vw;
+  height: 100vh;
+
+  form {
+    position: relative;
+    width: 30%;
+    margin: 5em auto;
+  }
+}
+
+input[type="submit"] {
+  text-align: center;
+}
+
+.colour_input {
+  padding: 0;
+  border-color: transparent;
+}
+
+.colour_field_container {
+  width: 50%;
+}

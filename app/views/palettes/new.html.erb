@@ -1,0 +1,51 @@
+<div class="palette_new_wrapper">
+  <div class="create_page_container">
+    <div class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title level-item is-1">Create New Palette</h1>
+        </div>
+      </div>
+    </div>
+
+    <%= form_for(@palette) do |f| %>
+      <!-- PALETTE TITLE -->
+      <div class="field">
+        <%= f.label 'Title', class: 'label' %>
+        <div class="control">
+          <%= f.text_field :title, class: 'input' %>
+        </div>
+      </div>
+
+      <!-- PALETTE COLOUR FIELDS -->
+      <div class="field colour_field_container">
+        <%= f.label 'Colours', class: 'label' %>
+
+        <%= f.fields_for :colours, @palette.colours.build do |clr| %>
+          <div class="columns">
+            <div class="column is-half">
+              <div class="control"><%= clr.color_field :hex_code, class: 'input colour_input' %></div>
+            </div>
+            <div class="column is-half">
+              <div class="control"><%= clr.color_field :hex_code, class: 'input colour_input' %></div>
+            </div>
+            <div class="column is-half">
+              <div class="control"><%= clr.color_field :hex_code, class: 'input colour_input' %></div>
+            </div>
+            <div class="column is-half">
+              <div class="control"><%= clr.color_field :hex_code, class: 'input colour_input' %></div>
+            </div>
+          </div>
+        <% end %>
+
+      <div class="field">
+        <div class="control">
+          <%= f.submit "Create", class: "button is-primary" %>
+        </div>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_17_081739) do
+ActiveRecord::Schema.define(version: 2019_06_17_094747) do
 
   create_table "colours", force: :cascade do |t|
     t.integer "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hex_code"
     t.index ["palette_id"], name: "index_colours_on_palette_id"
   end
 
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_081739) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["user_id"], name: "index_palettes_on_user_id"
   end
 
