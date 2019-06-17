@@ -21,27 +21,27 @@ ActiveRecord::Schema.define(version: 2019_06_17_081739) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "pallette_id"
+    t.integer "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pallette_id"], name: "index_comments_on_pallette_id"
+    t.index ["palette_id"], name: "index_comments_on_palette_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "pallette_id"
+    t.integer "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pallette_id"], name: "index_likes_on_pallette_id"
+    t.index ["palette_id"], name: "index_likes_on_palette_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "pallettes", force: :cascade do |t|
+  create_table "palettes", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_pallettes_on_user_id"
+    t.index ["user_id"], name: "index_palettes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,6 +1,6 @@
 class PalettesController < ApplicationController
 
-    before_action :find_palette, only [:show, :edit, :destroy]
+    before_action :find_palette, only: [:show, :edit, :destroy]
 
     def new
         @palette = Palette.new
@@ -34,6 +34,9 @@ class PalettesController < ApplicationController
 
     def destroy
         @palette.destroy
+    end
+
+    def index
     end
 
     private
