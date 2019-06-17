@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :authorize_user
     before_action :current_user, only: [:show]
     skip_before_action :authorize_user, only: [:new, :create, :home]
-    
+
 
     def new
         @user = User.new
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             redirect_to user_path(user)
         else
             flash[:errors] = user.errors.full_messages
-            redirect_to new_user_path
+            redirect_to user_path(user)
         end
     end
 

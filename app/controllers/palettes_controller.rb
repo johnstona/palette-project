@@ -44,6 +44,18 @@ class PalettesController < ApplicationController
     end
 
     def index
+      palettes = Palette.all
+      @palettes_arr = []
+
+      palettes.each do |pallete|
+        palette_hash = {}
+
+        palette_hash[:colours] = palette.colours
+        palette_hash[:title] = palette.title
+        palette_hash[:user] = palette.user.name
+
+        @palettes_arr << palette_hash
+      end
     end
 
     private

@@ -1,0 +1,21 @@
+<div class="palette_card">
+  <div class="palette">
+    <div class="colour" style="<%= palette_hash[:colours][1].name %>"></div>
+    <div class="colour" style="<%= palette_hash[:colours][2].name %>"></div>
+    <div class="colour" style="<%= palette_hash[:colours][3].name %>"></div>
+    <div class="colour" style="<%= palette_hash[:colours][4].name %>"></div>
+  </div>
+  <div class="like_container">
+    <span class="likes_number"><%= palette.likes.count %></span>
+  </div>
+  <div class="comment_container">
+    <span class="comments_number"></span>
+  </div>
+  <div class="card_info">
+    <div class="user_info">
+      <h6></h6>
+      <span class="date"></span>
+    </div>
+  </div>
+  <div class="palette_title"><%= palette_hash[:title] %></div>
+</div>

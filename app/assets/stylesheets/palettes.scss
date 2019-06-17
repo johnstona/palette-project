@@ -1,3 +1,5 @@
+/* PALETTE CREATE PAGE */
+
 .create_page_container {
 
   width: 100vw;
@@ -23,6 +25,10 @@ input[type="submit"] {
   width: 50%;
 }
 
+/* END */
+
+/* PALETTE SHOW PAGE */
+
 .more_square {
   margin: auto;
   padding-left: 75px;
@@ -45,3 +51,19 @@ p:hover + .show{
 
 .center {
 }
+
+/* END */
+
+
+/* LANDING PAGE */
+
+  .home_page_wrapper {
+    display: grid;
+    width: 80vw;
+    height: 100vh;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(3, 100px);
+    justify-content: center;
+  }
+
+/* END */

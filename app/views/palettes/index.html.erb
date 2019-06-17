@@ -1,1 +1,7 @@
-
+<div class="home_page_wrapper">
+  <% @palettes_arr.each do |palette_hash| %>
+    <% if palette_hash[colours].size == 4 %>
+      <%= render 'four-colours'%>
+    <% end %>
+  <% end %>
+</div>
