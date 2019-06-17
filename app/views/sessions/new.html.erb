@@ -1,2 +1,49 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title level-item">
+        Please sign in
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="box">
+<div class="columns is-desktop is-centered">
+  <div class="column is-half">
+    <div id="login">
+    <div class="login-card">
+
+    
+
+
+    <div class="content">
+      <%= form_tag sessions_path do %>
+      <div class="field">
+        <label class="label">Username</label>
+
+            <div class="control">
+            <%= text_field_tag :username, "", {:class => "input", :placeholder => "eg. PaletteBoy69"}%>
+        </div>
+        </div>
+        <div class="field">
+        <label class="label">Password</label>
+            <p class="control">
+                <%= password_field_tag :password, "", {:class => "input", :placeholder => "Password"}%>
+            </p>
+        </div>
+    <div class="buttons">
+        <button type="submit" class="button is-primary">Login</button>
+        <% end %>
+          <a class="button is-link" href="/users/new">Create Account</a>
+        </div>
+        </div>
+
+        
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
