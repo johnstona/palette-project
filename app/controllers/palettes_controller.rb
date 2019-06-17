@@ -1,6 +1,6 @@
 class PalettesController < ApplicationController
 
-    before_action :find_palette, only: [:show, :edit, :destroy]
+    # before_action :find_palette, only: [:show, :edit, :destroy]
 
     def new
       @palette = Palette.new
@@ -17,6 +17,9 @@ class PalettesController < ApplicationController
     end
 
     def show
+      @palettes = Palette.first
+      @colours = Colour.all
+      @comments = Comment.all
     end
 
     def edit
