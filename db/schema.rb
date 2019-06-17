@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_17_081739) do
+ActiveRecord::Schema.define(version: 2019_06_17_111840) do
 
   create_table "colours", force: :cascade do |t|
     t.integer "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "colour_hex"
     t.index ["palette_id"], name: "index_colours_on_palette_id"
   end
 
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_081739) do
     t.integer "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "comment"
     t.index ["palette_id"], name: "index_comments_on_palette_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end

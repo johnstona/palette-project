@@ -1,0 +1,24 @@
+<br />
+<div class="more_square">
+  <% @palettes.colours.each do |c| %>
+    <p class="square" style="background-color: <%= c.colour_hex %>">
+        <%= c.colour_hex %>
+    </p>
+  <%end%>
+</div>
+
+<br />
+<div class="more_square">
+  <%= form_tag new_comment_path do %>
+    <%= hidden_field_tag :comment_id, @comment_id %>
+    <%= text_field_tag 'comment', nil, placeholder: 'Enter your comment'%>
+    <%= submit_tag %>
+  <% end %>
+</div>
+<br />
+<div class="more_square">
+<% @palettes.comments.each do |com| %>
+  <p><%= com.user.username %>: <%=com.comment%></p>
+<%end%>
+</div>
+<br />

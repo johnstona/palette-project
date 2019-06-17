@@ -1,0 +1,23 @@
+.more_square {
+  margin: auto;
+  padding-left: 75px;
+
+}
+
+.show {
+  // display: none;
+  opacity: 0;
+}
+
+p:hover + .show{
+  // display: block;
+  opacity: 100;
+}
+
+.square {
+  height:75px;
+  width:600px;
+}
+
+.center {
+}
