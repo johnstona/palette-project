@@ -1,0 +1,71 @@
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title level-item">
+        Create account
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="box">
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">
+    <div id="login">
+    <div class="login-card">
+
+    
+
+
+    <div class="content">
+      <%= form_for @user do |f| %>
+      <div class="field">
+        <label class="label">Username</label>
+
+            <div class="control">
+            <%= f.text_field :username, :class => "input is-primary", :placeholder => "eg. PaletteBoy69"%>
+        </div>
+        </div>
+        <div class="field">
+        <label class="label">Password</label>
+            <p class="control">
+                <%= f.password_field :password, :class => "input is-primary", :placeholder => "Password"%>
+            </p>
+        </div>
+        <div class="field">
+        <label class="label">First Name</label>
+
+            <div class="control">
+            <%= f.text_field :first_name, :class => "input is-primary", :placeholder => "eg. Leonardo"%>
+        </div>
+        </div>
+        <div class="field">
+        <label class="label">Last Name</label>
+
+            <div class="control">
+            <%= f.text_field :last_name, :class => "input is-primary", :placeholder => "eg. DiCaprisun"%>
+        </div>
+        </div>
+        <div class="field">
+        <label class="label">Bio</label>
+
+            <div class="control">
+            <%= f.text_area :bio, :class => "textarea is-primary", :placeholder => "eg. Actor and fruit juice enthusiast"%>
+            </textarea>
+        </div>
+        </div>
+    <div class="buttons">
+        <button type="submit" class="button is-primary">Create Account</button>
+        <% end %>
+          <a class="button is-link" href="/login">Login</a>
+        </div>
+        </div>
+
+        
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>

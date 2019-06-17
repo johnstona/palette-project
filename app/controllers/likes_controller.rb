@@ -14,8 +14,14 @@ class LikesController < ApplicationController
         end
     end
 
+    private
+
     def like_params
         params.require(:like).permit(:palette_id, :user_id)
+    end
+
+    def already_liked?
+        Like.where(user_id: current_user.id, palette_id: params[:palette_id]).exists?
     end
     
 end
