@@ -1,8 +1,8 @@
 <br />
 <div class="more_square">
-  <% @palettes.colours.each do |c| %>
-    <p class="square" style="background-color: <%= c.colour_hex %>">
-        <%= c.colour_hex %>
+  <% @palette.colours.each do |c| %>
+    <p class="square" style="background-color: <%= c.hex_code %>">
+      <div class="show"><%= c.hex_code %></div>
     </p>
   <%end%>
 </div>
@@ -17,8 +17,10 @@
 </div>
 <br />
 <div class="more_square">
-<% @palettes.comments.each do |com| %>
+<% @palette.comments.each do |com| %>
   <p><%= com.user.username %>: <%=com.comment%></p>
 <%end%>
 </div>
+
+<!-- palette likes -->
 <br />

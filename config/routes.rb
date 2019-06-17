@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post "sessions", to: "sessions#create", as: "sessions"
   delete "sessions", to: "sessions#destroy", as: "logout"
   get '/', to: 'palettes#index'
+  get 'palettes/new/:num', to: 'palettes#new', as: 'new_palette'
 
   resources :colours
   resources :comments

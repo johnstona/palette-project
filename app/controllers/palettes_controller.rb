@@ -1,23 +1,27 @@
 class PalettesController < ApplicationController
 
-    # before_action :find_palette, only: [:show, :edit, :destroy]
+    before_action :find_palette, only: [:show, :edit, :destroy]
+    before_action :current_user
 
     def new
       @palette = Palette.new
+      nums = params[:num].to_i
+      nums.times do |num|
+        @palette.colours.build(hex_code: "#fff")
+      end
     end
 
     def create
-        palette = Palette.create palette_params
-        if palette
-            redirect_to palette
-        else
-            flash[:errors] = palette.errors.full_messages
-            redirect to new_palette_path
-        end
+      palette = Palette.create palette_params
+      if palette
+          redirect_to palette_path(palette)
+      else
+          flash[:errors] = palette.errors.full_messages
+          redirect to new_palette_path
+      end
     end
 
     def show
-      @palettes = Palette.first
       @colours = Colour.all
       @comments = Comment.all
     end
@@ -45,7 +49,7 @@ class PalettesController < ApplicationController
     private
 
     def palette_params
-        params.require(:palette).permit(:user_id, :title, colours_attributes: [])
+        params.require(:palette).permit(:user_id, :title, colours_attributes: [:hex_code])
     end
 
     def find_palette

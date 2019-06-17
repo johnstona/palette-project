@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   before_action :authorize_user
   skip_before_action :authorize_user, only: [:new, :create]
- 
+
   def new
     @user = User.new
   end
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to login_path
     else
       session[:user_id] = user.id
-      redirect_to new_answer_path
+      redirect_to new_palette_path
     end
   end
 
@@ -22,5 +22,5 @@ class SessionsController < ApplicationController
     session.delete :user_id
     redirect_to login_path
   end
-  
+
 end
