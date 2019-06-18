@@ -4,11 +4,13 @@ class PalettesController < ApplicationController
     before_action :current_user
 
     def new
-      @palette = Palette.new
-      nums = params[:num].to_i
-      nums.times do |num|
-        @palette.colours.build(hex_code: "#fff")
-      end
+      # nums = params[:num].to_i
+      # nums.times do |num|
+      @palette.colours.build(hex_code: "#fff")
+      @palette.colours.build(hex_code: "#fff")
+      @palette.colours.build(hex_code: "#fff")
+      @palette.colours.build(hex_code: "#fff")
+      # end
     end
 
     def create
@@ -24,6 +26,7 @@ class PalettesController < ApplicationController
     def show
       @colours = Colour.all
       @comments = Comment.all
+      @comment = Comment.new
     end
 
     def edit
@@ -55,5 +58,4 @@ class PalettesController < ApplicationController
     def find_palette
         @palette = Palette.find params[:id]
     end
-
 end

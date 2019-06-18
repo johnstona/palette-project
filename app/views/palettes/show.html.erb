@@ -2,24 +2,26 @@
 <div class="more_square">
   <% @palette.colours.each do |c| %>
     <p class="square" style="background-color: <%= c.hex_code %>">
-      <div class="show"><%= c.hex_code %></div>
+      <span class="show"><%= c.hex_code %></span>
     </p>
   <%end%>
 </div>
 
 <br />
 <div class="more_square">
-  <%= form_tag new_comment_path do %>
-    <%= hidden_field_tag :comment_id, @comment_id %>
-    <%= text_field_tag 'comment', nil, placeholder: 'Enter your comment'%>
-    <%= submit_tag %>
-  <% end %>
+<%= form_for [@palette, @comment] do |f| %>
+  <%# <%= f.hidden_field(:user_id, user_id: current_user.id) %>
+  <%= hidden_field_tag :user_id, id: current_user.id %>
+  <%= hidden_field_tag :palette_id, id: @palette.id %>
+  <%= f.text_area :comment, placeholder: "Enter Comment"%>
+  <%= f.submit %>
+<% end %>
 </div>
 <br />
 <div class="more_square">
-<% @palette.comments.each do |com| %>
-  <p><%= com.user.username %>: <%=com.comment%></p>
-<%end%>
+  <% @palette.comments.each do |com| %>
+    <p> <%= com.user.username %>: <%= com.comment %> </p>
+  <%end%>
 </div>
 
 <!-- palette likes -->
