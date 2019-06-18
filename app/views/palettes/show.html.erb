@@ -11,7 +11,7 @@
 <div class="more_square">
   <%= form_tag new_comment_path do %>
     <%= hidden_field_tag :comment_id, @comment_id %>
-    <%= text_field_tag 'comment', nil, placeholder: 'Enter your comment'%>
+    <%= text_area_tag 'comment', nil, placeholder: 'Enter your comment'%>
     <%= submit_tag %>
   <% end %>
 </div>
