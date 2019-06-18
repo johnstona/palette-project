@@ -62,7 +62,7 @@ p:hover + .show{
     width: 80vw;
     height: 100vh;
     grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(3, 100px);
+    grid-auto-rows: 100px;
     justify-content: center;
   }
 

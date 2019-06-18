@@ -22,5 +22,13 @@
 <%end%>
 </div>
 
-<!-- palette likes -->
+<% already_liked = @palette.likes.find_by(user_id: @user.id)%>
+<% if already_liked%>
+<%= button_to 'Unlike', palette_like_path(@palette), method: :delete %>
+<% else %>
+<%= button_to 'Like', palette_likes_path(@palette), method: :post %>
+<% end %>
+
+
+Likes: <%= @palette.likes.count %>
 <br />

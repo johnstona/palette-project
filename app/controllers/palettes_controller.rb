@@ -2,13 +2,17 @@ class PalettesController < ApplicationController
 
     before_action :find_palette, only: [:show, :edit, :destroy]
     before_action :current_user
+    before_action :liked_by_user?, only: [:show]
 
     def new
       @palette = Palette.new
-      nums = params[:num].to_i
-      nums.times do |num|
+    #   nums = params[:num].to_i
+    #   nums.times do |num|
         @palette.colours.build(hex_code: "#fff")
-      end
+        @palette.colours.build(hex_code: "#fff")
+        @palette.colours.build(hex_code: "#fff")
+        @palette.colours.build(hex_code: "#fff")
+    #   end
     end
 
     def create
@@ -44,18 +48,7 @@ class PalettesController < ApplicationController
     end
 
     def index
-      palettes = Palette.all
-      @palettes_arr = []
-
-      palettes.each do |pallete|
-        palette_hash = {}
-
-        palette_hash[:colours] = palette.colours
-        palette_hash[:title] = palette.title
-        palette_hash[:user] = palette.user.name
-
-        @palettes_arr << palette_hash
-      end
+      @palettes = Palette.all
     end
 
     private
@@ -66,6 +59,10 @@ class PalettesController < ApplicationController
 
     def find_palette
         @palette = Palette.find params[:id]
+    end
+
+    def liked_by_user?
+        @palette.likes.where(user_id: current_user.id)
     end
 
 end

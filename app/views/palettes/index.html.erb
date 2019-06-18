@@ -1,7 +1,7 @@
 <div class="home_page_wrapper">
-  <% @palettes_arr.each do |palette_hash| %>
-    <% if palette_hash[colours].size == 4 %>
-      <%= render 'four-colours'%>
+  <% @palettes.each do |palette| %>
+    <% if palette.colours.size == 4 %>
+      <%= render :partial => 'four-colours', :locals => {:palette => palette} %>
     <% end %>
   <% end %>
 </div>

@@ -1,0 +1,59 @@
+<div class="palette_card">
+  <div class="palette">
+    <div class="colour" style="background-color: <%= palette.colours[0].hex_code %>">
+      <span class="colour_hex">
+        <%= palette.colours[0].hex_code %>
+      </span>
+    </div>
+    <div class="colour" style="background-color: <%= palette.colours[1].hex_code %>">
+      <span class="colour_hex">
+        <%= palette.colours[1].hex_code %>
+      </span>
+    </div>
+    <div class="colour" style="background-color: <%= palette.colours[2].hex_code %>">
+      <span class="colour_hex">
+        <%= palette.colours[2].hex_code %>
+      </span>
+    </div>
+    <div class="colour" style="background-color: <%= palette.colours[3].hex_code %>">
+      <span class="colour_hex">
+        <%= palette.colours[3].hex_code %>
+      </span>
+    </div>
+  </div>
+
+  <div class="like_container">
+
+    <a href="<%= palette_path(palette) %>">
+      <% if palette.likes.find_by(user_id: @user.id) %>
+        <i class="fas fa-heart"></i>
+      <% else %>
+        <i class="far fa-heart"></i>
+      <% end %>
+    </a>
+
+    <span class="likes_number">
+      <%= palette.likes.count %>
+    </span>
+  </div>
+
+  <div class="comment_container">
+    <i class="far fa-comment"></i>
+    <span class="comments_number">
+      <%= palette.comments.count %>
+    </span>
+  </div>
+
+  <div class="card_info">
+    <div class="user_info">
+      <% user = User.find(palette.user_id) %>
+      <h6><%= user.username %></h6>
+      <span class="date">
+        <%= palette.created_at %>
+      </span>
+    </div>
+    <div class="palette_title">
+      <h5><%= palette.title %></h5>
+    </div>
+  </div>
+</div>
