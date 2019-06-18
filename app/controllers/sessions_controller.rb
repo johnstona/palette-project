@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to login_path
     else
       session[:user_id] = user.id
-      redirect_to new_palette_path
+      redirect_to new_palette_path(4)
     end
   end
 

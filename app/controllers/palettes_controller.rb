@@ -6,13 +6,10 @@ class PalettesController < ApplicationController
 
     def new
       @palette = Palette.new
-    #   nums = params[:num].to_i
-    #   nums.times do |num|
+    nums = params[:num].to_i
+    nums.times do |num|
         @palette.colours.build(hex_code: "#fff")
-        @palette.colours.build(hex_code: "#fff")
-        @palette.colours.build(hex_code: "#fff")
-        @palette.colours.build(hex_code: "#fff")
-    #   end
+    end
     end
 
     def create

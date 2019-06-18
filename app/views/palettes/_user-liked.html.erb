@@ -1,5 +1,9 @@
-<% if palette.likes.find_by(user_id: @user.id) %>
-  <%= <i class="fas fa-heart"></i> %>
+<% if @user.logged_in? %>
+  <% if palette.likes.find_by(user_id: @user.id) %>
+    <%= <i class="fas fa-heart"></i> %>
+  <% else %>
+    <%= <i class="fas fa-heart"></i> %>
+  <% end %>
 <% else %>
   <%= <i class="fas fa-heart"></i> %>
 <% end %>

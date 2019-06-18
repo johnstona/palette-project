@@ -1,5 +1,4 @@
 /* PALETTE CREATE PAGE */
-
 .create_page_container {
 
   width: 100vw;
@@ -56,14 +55,5 @@ p:hover + .show{
 
 
 /* LANDING PAGE */
-
-  .home_page_wrapper {
-    display: grid;
-    width: 80vw;
-    height: 100vh;
-    grid-template-columns: repeat(3, 300px);
-    grid-auto-rows: 100px;
-    justify-content: center;
-  }
 
 /* END */

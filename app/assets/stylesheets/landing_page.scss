@@ -1,0 +1,240 @@
+.home_page_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 280px));
+  grid-auto-rows: 60px;
+  grid-gap: 2em;
+  width: 90vw;
+  height: 100%;
+  margin: 5rem auto;
+}
+
+.potd_card {
+  grid-row: span 9;
+  border: solid 2px black;
+}
+
+/*  --- different sized palettes --- */
+
+  /* - general palette card wrappers - */
+.palette {
+  display: grid;
+  grid-column: 1 / 10;
+  grid-row: 1 / 9;
+  border: solid 2px black;
+}
+
+.palette_card {
+  font-family: 'Noah', Futura, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 10px;
+  color: black;
+}
+  /*  - END- */
+
+.palette_link {
+  width: 100%;
+  height: 100%;
+}
+
+.palette_card_four_five {
+  grid-row: span 3;
+}
+
+.palette_card_six_seven {
+  grid-row: span 4;
+}
+
+.palette_card_eight_nine {
+  grid-row: span 5;
+}
+
+.palette_card_ten {
+  grid-row: span 5;
+}
+
+/* palette sizes */
+
+.palette_four {
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.palette_five {
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.palette_six {
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.palette_seven {
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.palette_eight {
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.palette_nine {
+  grid-template-rows: repeat(9, 1fr);
+}
+
+.palette_ten {
+  grid-template-rows: repeat(10, 1fr);
+}
+
+/* --- END ---- */
+
+.colour {
+  display: grid;
+  border-color: black;
+  border-top: solid 2px;
+}
+
+.colour_hex {
+  align-self: flex-end;
+  justify-self: flex-start;
+  background: rgba(0,0,0,0.2);
+  padding: 2px;
+  border-radius: 0px 5px 0px 0px;
+  color: lightgray;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    opacity: 1;
+  }
+}
+
+.palette_card .colour:first-child {
+  border-top: 0px;
+}
+
+.side_bar {
+  grid-column: 10 / 11;
+  grid-row: span 10;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.comment_container, .like_container {
+  padding: 5px;
+  text-align: center;
+  border: solid 2px black;
+}
+
+.comment_container i, .like_container i {
+  border-bottom: solid 1px black;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+}
+
+.comment_container {
+  margin-top: 5px;
+}
+
+.card_info {
+  display: grid;
+  grid-column: 1 / 10;
+  grid-row: 9 / 11;
+  grid-template-columns: repeat(4, 1fr);
+  border: solid 2px black;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+}
+
+.card_date_container {
+  grid-column: 1fr;
+  border-right: solid 2px black;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 5px;
+  align-items: center;
+}
+
+.user_info h6 {
+  margin-bottom: -0.25em;
+  letter-spacing: 1px;
+}
+
+.date {
+  font-size: 10px;
+  padding: 0;
+}
+
+.palette_title {
+  grid-column: span 3;
+  text-transform: lowercase;
+  padding: 5px;
+}
+
+.palette_title h5 {
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1em;
+  font-size: 0.75em;
+  word-break: break-all;
+}
+
+
+// MEDIA QUERIES
+
+@media(max-width:1200px) {
+  .home_page_wrapper {
+    grid-template-columns: repeat(4, minmax(200px, 300px));
+    grid-gap: 2em;
+    grid-auto-rows: 50px;
+  }
+}
+
+@media(max-width:992px) {
+
+  .home_page_wrapper {
+    grid-template-columns: repeat(3, minmax(220px, 300px));
+    grid-gap:1em;
+    grid-auto-rows: 70px;
+  }
+
+}
+
+@media(max-width:768px) {
+  .home_page_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:2em;
+    grid-auto-rows: 60px;
+  }
+}
+
+  @media(max-width:500px) {
+    .home_page_wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 60px;
+      grid-gap:1em;
+      width: 95vw;
+    }
+
+    .palette_card {
+      grid-gap: 5px;
+    }
+
+    .user_info {
+      display: none;
+    }
+
+    .comment_container, .like_container {
+      padding: 2px;
+      text-align: center;
+      border: solid 2px black;
+    }
+
+    .palette_title {
+      grid-column: span 3;
+    }
+}
