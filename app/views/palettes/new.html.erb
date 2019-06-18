@@ -33,10 +33,30 @@
       <div class="field">
         <div class="control">
           <%= f.submit "Create", class: "button is-primary" %>
+          <input type="hidden" name="palette[user_id]" value="<%= @user.id %>">
+        <% end %>
+    
+     <div class="field">
+        <div class="control">
+        <%= form_tag "/palettes/new/", method: "get" do %>
+          <div class="select">
+            <select name="num" id="num">
+              <option value='4'>4 colours</option>
+              <option value='5'>5 colours</option>
+              <option value='6'>6 colours</option>
+              <option value='7'>7 colours</option>
+              <option value='8'>8 colours</option>
+              <option value='9'>9 colours</option>
+              <option value='10'>10 colours</option>
+            </select>
+            <input type="submit" value="Change colours" class="button is-primary">
+          </div>
+          <%end%>
+        </div> 
+       </div>
+
         </div>
       </div>
-      <input type="hidden" name="palette[user_id]" value="<%= @user.id %>">
-    <% end %>
 
   </div>
 </div>
