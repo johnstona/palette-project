@@ -12,17 +12,18 @@
   </head>
   <body>
     <div class="wrapper">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav class="navbar is-info" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
             <i class="fas fa-palette fa-3x"></i>
           </a>
 
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+          
+        </div>
+        <div class="level-item has-text-centered">
+        <div>
+          <p class="title">PALETTEPAL</p>
+        </div>
         </div>
 
         
@@ -46,8 +47,9 @@
         <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
+                <%= button_to("Create Palette", new_palette_path(num: 4), method: :get, class: "button is-primary") %>
+               
                 <%= button_to("Logout", logout_path, method: :delete, class: "button is-warning") %>
-                </a>
               </div>
             </div>
           </div>
