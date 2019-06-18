@@ -13,7 +13,7 @@
 
   <div class="like_container">
 
-    <a href="<%= palette_path(palette) %>">
+    <a class="" href="<%= palette_path(palette) %>">
       <% if palette.likes.find_by(user_id: @user.id) %>
         <i class="fas fa-heart"></i>
       <% else %>
@@ -34,14 +34,14 @@
   </div>
 
   <div class="card_info">
+    <div class="palette_title">
+      <h5><%= palette.title %></h5>
+    </div>
     <div class="card_date_container">
       <% user = User.find(palette.user_id) %>
       <span class="date">
-        <%= palette.created_at %>
+        <%= palette.created_at.strftime("%d/%m/%Y") %>
       </span>
-    </div>
-    <div class="palette_title">
-      <h5><%= palette.title %></h5>
     </div>
   </div>
 </div>
