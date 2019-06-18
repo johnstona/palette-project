@@ -2,7 +2,7 @@
   <div class="palette <%= palette_container_class %>">
     <% palette.colours.each do |colour| %>
       <div class="colour" style="background-color: <%= colour.hex_code %>">
-        <a href="palette_link">
+        <a class="palette_link" href="<%= palette_path(palette) %>">
           <span class="colour_hex">
             <%= colour.hex_code %>
           </span>
