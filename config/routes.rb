@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: "login"
   post "sessions", to: "sessions#create", as: "sessions"
   delete "sessions", to: "sessions#destroy", as: "logout"
-  get '/', to: 'palettes#index'
+  get '/', to: 'palettes#index', as: "index"
 
   get 'palettes/new/:num', to: 'palettes#new', as: 'new_palette'
 
