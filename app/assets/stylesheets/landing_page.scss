@@ -21,11 +21,6 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
   margin: 5rem auto;
 }
 
-.potd_card {
-  grid-row: span 9;
-  border: solid 2px $mute_black;
-}
-
 /*  --- different sized palettes --- */
 
   /* - general palette card wrappers - */
@@ -45,7 +40,33 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
   grid-gap: 5px;
   color: black;
 }
-  /*  - END- */
+
+/* palette of the day */
+
+.potd_card {
+  grid-row: span 5;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+  padding: 1em;
+  display: grid;
+  grid-gap: 1em;
+  border-radius: 5px;
+
+  h4 {
+    letter-spacing: 1px;
+    color: #272727;
+    margin-bottom: -2em;
+    text-shadow: -1px 0px 1px rgba(0,0,0,0.25);
+  }
+}
+
+.palette_of_the_day_card {
+  display: grid;
+  .colour_hex {
+    font-size: 10px;
+  }
+}
+
+/*  - END- */
 
 
 .palette_card_four_five {
@@ -99,7 +120,7 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
 
 .colour {
   display: grid;
-  //border-left: solid 5px $mute-black;
+  overflow: hidden;
 }
 
 .colour:first-child {
@@ -215,15 +236,15 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
   font-size: 16px;
 }
 
-.sidebar {
-  opacity: 0;
-}
-
-.palette_card:hover > .sidebar {
-  opacity: 1;
-  transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-}
+// .sidebar {
+//   opacity: 0;
+// }
+//
+// .palette_card:hover > .sidebar {
+//   opacity: 1;
+//   transition-duration: 0.5s;
+//   -moz-transition-duration: 0.5s;
+// }
 
 // MEDIA QUERIES
 

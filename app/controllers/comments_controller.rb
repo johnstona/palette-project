@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
             comment = @palette.comments.create(user_id: @user.id, comment: comment_params[:comment])
             redirect_to palette_path(comment.palette)
         else
-            flash[:notice] = "You must be logged in to make a comment"
+            flash[:errors] = ["You must be logged in to make a comment"]
             redirect_to palette_path(@palette)
         end
     end

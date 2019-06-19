@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
   get "login", to: "sessions#new", as: "login"
   post "sessions", to: "sessions#create", as: "sessions"
   delete "sessions", to: "sessions#destroy", as: "logout"
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   get 'palettes/new/:num', to: 'palettes#new', as: 'new_palette'
 
   get "/:page" => "static#show"
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
 
   resources :colours
   resources :comments
