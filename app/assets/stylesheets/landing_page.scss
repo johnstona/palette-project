@@ -3,7 +3,7 @@ $comment_blue: #6565FF ;
 $mute: #999999;
 $text_black: #272727;
 $mute_black: #404040;
-$box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+$box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
 
 ::selection {
   background: $text_black;
@@ -13,8 +13,9 @@ $box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
 .home_page_wrapper {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 280px));
-  grid-auto-rows: 60px;
+  grid-auto-rows: 40px;
   grid-gap: 3em;
+  justify-content: center;
   width: 90vw;
   height: 100%;
   margin: 5rem auto;
@@ -98,7 +99,7 @@ $box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
 
 .colour {
   display: grid;
-  border-left: solid 5px $mute-black;
+  //border-left: solid 5px $mute-black;
 }
 
 .colour:first-child {
@@ -137,13 +138,6 @@ $box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
 
 .palette_card .colour:first-child {
   border-top: 0px;
-}
-
-.side_bar {
-  grid-column: 10 / 11;
-  grid-row: span 10;
-  display: flex;
-  flex-flow: column wrap;
 }
 
 .comment_container, .like_container {
@@ -194,7 +188,6 @@ $box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
 
 .palette_title h5 {
   font-weight: bold;
-  letter-spacing: 1px;
   line-height: 1em;
   font-size: 1em;
   word-break: break-all;
@@ -222,6 +215,15 @@ $box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
   font-size: 16px;
 }
 
+.sidebar {
+  opacity: 0;
+}
+
+.palette_card:hover > .sidebar {
+  opacity: 1;
+  transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+}
 
 // MEDIA QUERIES
 
@@ -229,15 +231,15 @@ $box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
   .home_page_wrapper {
     grid-template-columns: repeat(4, minmax(200px, 300px));
     grid-gap: 3em;
-    grid-auto-rows: 50px;
+    grid-auto-rows: 30px;
   }
 }
 
 @media(max-width:992px) {
   .home_page_wrapper {
     grid-template-columns: repeat(3, minmax(220px, 300px));
-    grid-gap:1em;
-    grid-auto-rows: 70px;
+    grid-gap:2.5em;
+    grid-auto-rows: 50px;
   }
 }
 
@@ -249,30 +251,22 @@ $box_shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
   }
 }
 
-@media(max-width:500px) {
+@media(max-width: 600px) {
   .home_page_wrapper {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 60px;
-    grid-gap:1em;
+    grid-gap: 1em;
     width: 95vw;
   }
 
   .palette_card {
     grid-gap: 5px;
-
-    &:hover + .like_container, .comment_container {
-      opacity: 0;
-    }
-  }
-
-  .user_info {
-    display: none;
+    margin-bottom: 2.25em;
   }
 
   .comment_container, .like_container {
     padding: 2px;
     text-align: center;
-    border: solid 2px black;
   }
 
   .palette_title {
