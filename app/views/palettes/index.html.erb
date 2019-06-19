@@ -7,7 +7,6 @@
       <% Palette.palette_of_the_day.each do |palette| %>
         <%= render :partial => 'palette-of-the-day', :locals => { :palette => palette } %>
       <% end %>
-      <% else %>
   </div>
   <% @palettes.each do |palette| %>
     <% if palette.colours.size == 4 %>
