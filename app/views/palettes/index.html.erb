@@ -1,5 +1,11 @@
 <div class="home_page_wrapper">
   <div class="potd_card">
+      <h4>
+        PALETTE OF THE DAY
+      </h4>
+      <% Palette.palette_of_the_day.each do |palette| %>
+        <%= render :partial => 'palette-of-the-day', :locals => { :palette => palette } %>
+      <% end %>
   </div>
   <% @palettes.each do |palette| %>
     <% if palette.colours.size == 4 %>
