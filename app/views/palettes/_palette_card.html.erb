@@ -11,37 +11,40 @@
     <% end %>
   </div>
 
-  <div class="like_container">
+  <div class="sidebar">
+    <div class="like_container">
 
-    <a href="<%= palette_path(palette) %>">
-      <% if palette.likes.find_by(user_id: @user.id) %>
-        <i class="fas fa-heart"></i>
-      <% else %>
-        <i class="far fa-heart"></i>
-      <% end %>
-    </a>
+      <a href="<%= palette_path(palette) %>">
+        <% if palette.likes.find_by(user_id: @user.id) %>
+          <i class="fas fa-heart"></i>
+        <% else %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      </a>
 
-    <span class="likes_number">
-      <%= palette.likes.count %>
-    </span>
-  </div>
+      <span class="likes_number">
+        <%= palette.likes.count %>
+      </span>
+    </div>
 
-  <div class="comment_container">
-    <i class="far fa-comment"></i>
-    <span class="comments_number">
-      <%= palette.comments.count %>
-    </span>
-  </div>
-
+    <div class="comment_container">
+      <a href="<%= palette_path(palette) %>">
+        <i class="far fa-comment"></i>
+        <span class="comments_number">
+          <%= palette.comments.count %>
+        </span>
+      </a>
+    </div>
+</div>
   <div class="card_info">
+    <div class="palette_title">
+      <h5><%= palette.title %></h5>
+    </div>
     <div class="card_date_container">
       <% user = User.find(palette.user_id) %>
       <span class="date">
-        <%= palette.created_at %>
+        <%= palette.created_at.strftime("%d/%m/%Y") %>
       </span>
-    </div>
-    <div class="palette_title">
-      <h5><%= palette.title %></h5>
     </div>
   </div>
 </div>

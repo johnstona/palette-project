@@ -1,6 +1,5 @@
 /* PALETTE CREATE PAGE */
 .create_page_container {
-
   width: 100vw;
   height: 100vh;
 
@@ -9,6 +8,10 @@
     width: 30%;
     margin: 5em auto;
   }
+}
+
+.wrapper {
+  background: #f1f1f1;
 }
 
 input[type="submit"] {
@@ -52,10 +55,5 @@ p:hover .show{
 
 .center {
 }
-
-/* END */
-
-
-/* LANDING PAGE */
 
 /* END */

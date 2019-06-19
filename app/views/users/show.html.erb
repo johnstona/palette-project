@@ -1,1 +1,9 @@
 <h1><%= @username %></h1>
+
+<% @user.palettes.each do |p| %>
+  <%= p.title %>
+  <% p.colours.each do |c| %>
+    <p class="square" style="background-color: <%= c.hex_code %>"></p>
+  <% end %>
+  <br />
+<% end %>
