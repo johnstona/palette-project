@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     def authorize_user
         if !logged_in?
-            flash[:notice] = ["You must be logged in to view that page"]
+            flash[:errors] = ["You must be logged in to view that page"]
             return redirect_to login_path
         end
     end

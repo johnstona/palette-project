@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     def create
         user = User.create(user_params)
         if user.valid?
-            redirect_to index_path
+            redirect_to login_path, notice: "Account successfully created. Please log in"
         else
             flash[:errors] = user.errors.full_messages
             redirect_to new_user_path
