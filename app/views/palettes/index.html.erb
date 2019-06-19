@@ -3,7 +3,7 @@
       <h4>
         PALETTE OF THE DAY
       </h4>
-      <% if Palette.palette_of_the_day != nil%>
+      <% if Palette.palette_of_the_day.length > 0 %>
       <% Palette.palette_of_the_day.each do |palette| %>
         <%= render :partial => 'palette-of-the-day', :locals => { :palette => palette } %>
       <% end %>
