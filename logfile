@@ -1,0 +1,7 @@
+2019-06-19 14:22:30.915 BST [30707] LOG:  listening on IPv6 address "::1", port 5432
+2019-06-19 14:22:30.915 BST [30707] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-06-19 14:22:30.916 BST [30707] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-06-19 14:22:30.927 BST [30708] LOG:  database system was shut down at 2019-06-19 14:22:20 BST
+2019-06-19 14:22:30.929 BST [30707] LOG:  database system is ready to accept connections
+2019-06-19 14:22:46.847 BST [30737] FATAL:  database "palette_pal_development" does not exist
+2019-06-19 14:23:30.027 BST [30764] FATAL:  database "postgis_test" does not exist
