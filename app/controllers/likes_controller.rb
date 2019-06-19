@@ -10,19 +10,19 @@ class LikesController < ApplicationController
 
     def create
         if already_liked?
-            flash[:notice] = "You have already liked this palette"
+            flash[:errors] = ["You have already liked this palette"]
         elsif logged_in?
             like = @palette.likes.create(user_id: @user.id)
             redirect_to palette_path(like.palette)
         else
-            flash[:notice] = "You must be logged in to like this palette"
+            flash[:errors] = ["You must be logged in to like this palette"]
             redirect_to palette_path(@palette)
         end
     end
 
     def destroy
         if !already_liked?
-            flash[:notice] = "You can't unlike a palette you haven't liked"
+            flash[:errors] = ["You can't unlike a palette you haven't liked"]
         else
             @like.destroy
         end

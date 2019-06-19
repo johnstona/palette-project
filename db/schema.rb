@@ -12,18 +12,21 @@
 
 ActiveRecord::Schema.define(version: 2019_06_17_121726) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "colours", force: :cascade do |t|
-    t.integer "palette_id"
+    t.bigint "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "hex_code"
     t.string "colour_hex"
+    t.string "hex_code"
     t.index ["palette_id"], name: "index_colours_on_palette_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "palette_id"
+    t.bigint "user_id"
+    t.bigint "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "comment"
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 2019_06_17_121726) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "palette_id"
+    t.bigint "user_id"
+    t.bigint "palette_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["palette_id"], name: "index_likes_on_palette_id"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_121726) do
   end
 
   create_table "palettes", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
@@ -58,4 +61,10 @@ ActiveRecord::Schema.define(version: 2019_06_17_121726) do
     t.text "bio"
   end
 
+  add_foreign_key "colours", "palettes"
+  add_foreign_key "comments", "palettes"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "palettes"
+  add_foreign_key "likes", "users"
+  add_foreign_key "palettes", "users"
 end
