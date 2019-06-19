@@ -17,10 +17,13 @@ class User < ApplicationRecord
     validates :username, length: {maximum: 22}
     validates :password, length: {minimum: 2}
     validates :password, length: {maximum: 16}
-    validates :bio, length: {minimum: 15}
     validates :bio, length: {maximum: 200}
 
     
     has_secure_password
+
+    def liked_palettes
+        self.likes.each {|like| like.palette}
+    end
 
 end
