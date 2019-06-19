@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_many :likes, dependent: :destroy
     has_many :comments, dependent: :destroy
     has_many :palettes, dependent: :destroy
+    has_many :colours, through: :palettes
 
     validates :username, presence: true
     validates :username, uniqueness: true
@@ -20,7 +21,7 @@ class User < ApplicationRecord
     validates :bio, length: {minimum: 15}
     validates :bio, length: {maximum: 200}
 
-    
+
     has_secure_password
 
 end

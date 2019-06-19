@@ -1,1 +1,10 @@
-<h1><%= @username %></h1>
+<h1 class="username">Hi <%= @user.first_name %></h1>
+<h1 class="bioTitle">Bio:</h1>
+<h1 class="bio"><%= @user.bio %></h1>
+<br />
+<br />
+
+<% @user.colours.each do |c| %>
+  <p class="square" style="background-color: <%= c.hex_code %>">
+  </p>
+<%end%>
