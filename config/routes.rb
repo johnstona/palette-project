@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'palettes/new/:num', to: 'palettes#new', as: 'new_palette'
 
+  get "/:page" => "static#show"
+
   resources :colours
   resources :comments
   resources :likes
