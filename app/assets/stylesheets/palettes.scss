@@ -27,29 +27,73 @@ input[type="submit"] {
 
 /* PALETTE SHOW PAGE */
 
-.more_square {
-  margin: auto;
-  padding-left: 75px;
+.palette_show_wrapper {
+  height: 100%;
+  margin: 2em auto;
+
+  .palette_info {
+    margin-top: 2em;
+
+    .title {
+      //argin-bottom: 0.5em
+    }
+
+    .date {
+      font-size: 0.75em;
+      margin-top: 0.25em;
+    }
+  }
+
 }
 
-.show {
-  // display: none;
-  opacity: 0;
+.show_page_palette {
+  display: flex;
+  height: 30vw;
+  width: 50vw;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  margin: 1em 0em;
+  overflow: hidden;
+  border-radius: 10px;
+
+  .show_page_colour {
+    display: flex;
+    flex-grow: 1;
+
+    .colour_hex {
+      opacity: 0;
+      width: 100%;
+    }
+
+    &:hover > .colour_hex {
+      opacity: 1;
+      border-radius: 0px;
+      padding: 1em 0;
+      text-align: center;
+    }
+  }
+
+  form {
+    margin-top: 1em;
+  }
 }
 
-p:hover .show{
-  // display: block;
-  opacity: 100;
-  z-index: 1;
-  color: white;
+.comments_container {
+
+  .fields {
+    padding: 4em 0;
+    border-bottom: solid 1px rgba(0,0,0,0.2);
+  }
+
 }
 
-.square {
-  height:75px;
-  width:600px;
-}
+.comments {
+  margin-top: 2em;
 
-.center {
+  .box {
+    a {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
 }
-
 /* END */

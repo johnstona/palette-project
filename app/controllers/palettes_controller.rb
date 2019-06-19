@@ -24,7 +24,7 @@ class PalettesController < ApplicationController
 
     def show
       @colours = Colour.all
-      @comments = Comment.all
+      @comments = Comment.all || ""
       @comment = Comment.new
     end
 
