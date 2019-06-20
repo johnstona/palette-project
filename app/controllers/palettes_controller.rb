@@ -32,17 +32,17 @@ class PalettesController < ApplicationController
     end
 
     def update
-        palette = palette.update palette_params
-        if palette
-            redirect_to palette
-        else
-            flash[:errors] = palette.errors.full_messages
-            render :edit
-        end
+      palette = palette.update palette_params
+      if palette
+          redirect_to palette
+      else
+          flash[:errors] = palette.errors.full_messages
+          render :edit
+      end
     end
 
     def destroy
-        @palette.destroy
+      @palette.destroy
     end
 
     def index

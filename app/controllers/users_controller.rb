@@ -21,9 +21,15 @@ class UsersController < ApplicationController
     end
 
     def show
-      user = User.find(params[:id])
-      @username = user.username
-      @user_palette = user
+      @theuser = User.find(params[:id])
+      button = params[:button]
+
+      if button == 'liked'
+        @user_palettes = @theuser.likes.map {|like| like.palette}
+      else
+        @user_palettes = @theuser.palettes
+      end
+
     end
 
     private
@@ -32,4 +38,7 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :password, :first_name, :last_name, :bio)
     end
 
+    def show_params
+        params.require(:user).permit(:id, :button)
+    end
 end

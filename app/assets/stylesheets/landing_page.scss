@@ -258,7 +258,7 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 @media(max-width:992px) {
-  .home_page_wrapper {
+  .home_page_wrapper, .palettes_wrapper {
     grid-template-columns: repeat(3, minmax(220px, 300px));
     grid-gap:2.5em;
     grid-auto-rows: 50px;
