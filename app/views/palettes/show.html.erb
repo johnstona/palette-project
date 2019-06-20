@@ -49,13 +49,25 @@
                 <div class="media">
                   <div class="media-content">
                     <div class="content is-half">
-                      <%= link_to c.user.username, user_path(c.user), class: 'comment_username is-link' %>
+                      <div class="user_content">
+                        <%= link_to c.user.username, user_path(c.user), class: 'comment_username is-link' %>
+                        <% if current_user.id == c.user.id %>
+                          <div class="delete_button_container">
+                            <%= form_tag palette_comment_path(@palette), method: :delete do %>
+                              <%= hidden_field_tag :_method, :delete %>
+                              <%= button_tag(type: "submit", class: "delete_button") do %>
+                                  <i class="far fa-times-circle"></i>
+                              <% end %>
+                            <% end %>
+
+                          </div>
+                        <% end %>
+                      </div>
+
                       <p>
                         <%= c.comment %>
                       </p>
-                      <% if current_user.id == c.user.id %>
-                        <%= button_to 'delete', palette_comment_path(@palette), method: :delete, class: "button is-small is-rounded is-danger" %>
-                      <% end %>
+
                     </div>
                   </div>
                 </div>
