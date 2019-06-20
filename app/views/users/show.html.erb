@@ -9,7 +9,7 @@
       <h4 >@<%= @theuser.username %></h4>
       <div class="bio_wrapper">
         <p class="bio_title is-size-6">Bio</p>
-        <p class="is-size-6 user_bio"><%= @theuser.bio %></p>
+        <p class="is-size-7 user_bio"><%= @theuser.bio %></p>
       </div>
       <div class="buttons">
           <%= link_to 'likes', user_path(id: @theuser.id, button: 'liked'), class: 'is-info button is-small'%>
