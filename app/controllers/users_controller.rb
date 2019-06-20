@@ -29,7 +29,6 @@ class UsersController < ApplicationController
       else
         @user_palettes = @theuser.palettes
       end
-
     end
 
     def edit
@@ -55,7 +54,7 @@ class UsersController < ApplicationController
     def show_params
         params.require(:user).permit(:id, :button)
     end
-    
+
     def update_user_params
         params.require(:user).permit(:id, :username, :password, :first_name, :last_name, :bio)
     end

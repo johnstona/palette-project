@@ -6,7 +6,7 @@
       <p> Name</p>
       <h2><%= @theuser.first_name %> <%= @theuser.last_name %></h2>
       <p>Username</p>
-      <h4 >@<%= @theuser.username %></h4>
+      <h4>@<%= @theuser.username %></h4>
       <div class="bio_wrapper">
         <p class="bio_title is-size-6">Bio</p>
         <p class="is-size-7 user_bio"><%= @theuser.bio %></p>
@@ -17,9 +17,7 @@
           <%= link_to 'palettes', user_path(id: @theuser.id), class: 'is-info button is-small'%>
           <%= button_to("edit", edit_user_path, method: :get, class: "button is-info is-small") %>
           <%= button_to("logout", logout_path, method: :delete, class: "button is-warning is-small") %>
-
         <% end %>
-
       </div>
     </div>
     </div>
@@ -34,10 +32,51 @@
                   :palette_card_class => 'palette_card_four_five ',
                   :palette_container_class => 'palette_four'
         } %>
-      <% elsif @user_palettes.empty? %>
-        <%= "YOU HAVE NO PALETTES" %>
+        <% elsif palette.colours.size == 5 %>
+          <%= render :partial => 'palettes/palette_card', :locals => {
+                    :palette => palette,
+                    :palette_card_class => 'palette_card_four_five ',
+                    :palette_container_class => 'palette_five'
+          } %>
+        <% elsif palette.colours.size == 6 %>
+          <%= render :partial => 'palettes/palette_card', :locals => {
+                    :palette => palette,
+                    :palette_card_class => 'palette_card_six_seven',
+                    :palette_container_class => 'palette_six'
+          } %>
+        <% elsif palette.colours.size == 7 %>
+          <%= render :partial => 'palettes/palette_card', :locals => {
+                    :palette => palette,
+                    :palette_card_class => 'palette_card_six_seven',
+                    :palette_container_class => 'palette_seven'
+          } %>
+        <% elsif palette.colours.size == 8 %>
+          <%= render :partial => 'palettes/palette_card', :locals => {
+                    :palette => palette,
+                    :palette_card_class => 'palette_card_eight_nine',
+                    :palette_container_class => 'palette_eight'
+          } %>
+        <% elsif palette.colours.size == 9 %>
+          <%= render :partial => 'palettes/palette_card', :locals => {
+                    :palette => palette,
+                    :palette_card_class => 'palette_card_eight_nine',
+                    :palette_container_class => 'palette_nine'
+          } %>
+        <% elsif palette.colours.size == 10 %>
+          <%= render :partial => 'palettes/palette_card', :locals => {
+                    :palette => palette,
+                    :palette_card_class => 'palette_card_eight_nine',
+                    :palette_container_class => 'palette_ten'
+          } %>
       <% end %>
     <% end %>
 
+    <% if @user_palettes.empty? %>
+      <div class="no_palettes">
+        <p class="is-size-4 mute">
+          <%= "add some palettes to this lonely page :(" %>
+        </p>
+      </div>
+    <% end %>
   </div>
 </div>
