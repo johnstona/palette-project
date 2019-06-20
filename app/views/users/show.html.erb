@@ -15,7 +15,7 @@
         <% if current_user.id == @theuser.id %>
           <%= link_to 'likes', user_path(id: @theuser.id, button: 'liked'), class: 'is-info button is-small'%>
           <%= link_to 'palettes', user_path(id: @theuser.id), class: 'is-info button is-small'%>
-          <%= button_to("edit", edit_user_path, method: :get, class: "button is-info is-small") %>
+          <%= link_to("edit", edit_user_path, method: :get, class: "is-info button is-small") %>
           <%= button_to("logout", logout_path, method: :delete, class: "button is-warning is-small") %>
 
         <% end %>
