@@ -25,9 +25,9 @@
       <div class="likes_container">
         <% already_liked = @palette.likes.find_by(user_id: @user.id)%>
         <% if already_liked%>
-          <%= button_to 'Unlike', palette_like_path(@palette), method: :delete, class: "button is-link" %>
+          <%= button_to 'Unlike', palette_like_path(@palette), method: :delete, class: "button like_button" %>
         <% else %>
-          <%= button_to 'Like', palette_likes_path(@palette), method: :post, class: "button is-link" %>
+          <%= button_to 'Like', palette_likes_path(@palette), method: :post, class: "button like_button" %>
         <% end %>
       </div>
       <div class="comments_container">
@@ -53,8 +53,8 @@
                       <p>
                         <%= c.comment %>
                       </p>
-                      <% if current_user %>
-                        <%= button_to 'delete', palette_comment_path(@palette), method: :delete, class: "delete_button is-link" %>
+                      <% if current_user.id == c.user.id %>
+                        <%= button_to 'delete', palette_comment_path(@palette), method: :delete, class: "button is-small is-rounded is-danger" %>
                       <% end %>
                     </div>
                   </div>

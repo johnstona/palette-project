@@ -1,4 +1,6 @@
 /* PALETTE CREATE PAGE */
+$heart_red: #FF6565;
+
 .create_page_container {
   min-height: 100vh;
   height: auto;
@@ -12,6 +14,12 @@
   .button {
     margin-top: 1em;
   }
+}
+
+.like_button {
+  background-color: $heart_red !important;
+  border: none !important;
+  color: white !important;
 }
 
 .colour_field_container {
