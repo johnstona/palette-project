@@ -123,5 +123,32 @@ span.label {
       font-weight: bold;
     }
   }
+
+  .user_content {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .delete_button {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    color: #F2785C;
+    cursor: pointer;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+
+    &:hover {
+      opacity: 0.5;
+      transition: 0.2s;
+      -moz-transition: 0.2s;
+      -webkit-transition: 0.2s;
+    }
+  }
+
+  .hide {
+    opacity: 0;
+  }
 }
 /* END */
