@@ -1,6 +1,6 @@
 $heart_red: #FF6565;
 $comment_blue: #6565FF ;
-$mute: #999999;
+$mute:#404040;
 $text_black: #272727;
 $mute_black: #404040;
 $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
@@ -26,19 +26,22 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
   /* - general palette card wrappers - */
 .palette {
   display: grid;
-  grid-column: 1 / 10;
-  grid-row: 1 / 9;
-  box-shadow: $box_shadow;
+  grid-column: 1 / 11;
+  grid-row: 1 / 10;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
 }
 
 .palette_card {
-  font-family: 'Noah', Futura, Helvetica, sans-serif;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   grid-gap: 5px;
   color: black;
+  padding: 15px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
 }
 
 /* palette of the day */
@@ -166,18 +169,13 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .comment_container, .like_container {
-  padding: 5px;
   text-align: center;
   margin-left: 5px;
 }
 
-.comment_container i, .like_container i {
-  padding-bottom: 5px;
-  margin-bottom: 2px;
-}
-
-.comment_container {
-  margin-top: 5px;
+.comment_container  {
+  // padding-bottom: 5px;
+  margin-left: 15px;
 }
 
 .card_info {
@@ -230,19 +228,18 @@ $box_shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
   color: $comment_blue;
 }
 
-.like_container {
-  border-bottom: solid 2px $mute_black;
-}
-
 .likes_number, .comments_number {
-  font-family: 'Noah', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: $mute;
   font-size: 16px;
 }
 
-// .sidebar {
-//   opacity: 0;
-// }
+.sidebar {
+  display: inline-flex;
+  grid-column: span 10;
+  height: 21px;
+  justify-content: flex-start;
+}
 //
 // .palette_card:hover > .sidebar {
 //   opacity: 1;

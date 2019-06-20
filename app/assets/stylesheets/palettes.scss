@@ -1,26 +1,43 @@
 /* PALETTE CREATE PAGE */
 .create_page_container {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
+}
 
-  form {
-    position: relative;
-    width: 30%;
-    margin: 5em auto;
+.form_wrapper {
+  width: 50%;
+  margin: 2rem auto;
+  display: block;
+
+  .button {
+    margin-top: 1em;
   }
 }
 
-input[type="submit"] {
-  text-align: center;
+.colour_field_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2em;
+  margin-left: -9px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+span.label {
+  margin-top: 2em;
+}
+
+.new_palette {
+  margin-bottom: 4em;
 }
 
 .colour_input {
-  padding: 0;
-  border-color: transparent;
-}
-
-.colour_field_container {
-  width: 50%;
+  background: transparent;
+  border: solid 1px transparent;
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 /* END */
@@ -62,6 +79,7 @@ input[type="submit"] {
     .colour_hex {
       opacity: 0;
       width: 100%;
+      padding: 0.5em 0;
     }
 
     &:hover > .colour_hex {
@@ -69,6 +87,8 @@ input[type="submit"] {
       border-radius: 0px;
       padding: 1em 0;
       text-align: center;
+      transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
     }
   }
 

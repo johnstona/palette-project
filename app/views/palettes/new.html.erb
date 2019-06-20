@@ -1,62 +1,62 @@
 <div class="palette_new_wrapper">
   <div class="create_page_container">
-    <div class="hero is-primary">
+
+
+  <div class="form_wrapper">
+    <div class="hero">
       <div class="hero-body">
         <div class="container">
           <h1 class="title level-item is-1">Create New Palette</h1>
         </div>
       </div>
     </div>
-
-    <%= form_for(@palette) do |f| %>
-      <!-- PALETTE TITLE -->
-      <div class="field">
-        <%= f.label 'Title', class: 'label' %>
-        <div class="control">
-          <%= f.text_field :title, class: 'input' %>
+      <%= form_for @palette do |f| %>
+        <!-- PALETTE TITLE -->
+        <div class="field is-full">
+          <%= f.label 'Title', class: 'label' %>
+          <div class="control">
+            <%= f.text_field :title, class: 'input' %>
+          </div>
         </div>
-      </div>
 
-      <!-- PALETTE COLOUR FIELDS -->
-      <div class="field colour_field_container">
-        <%= f.label 'Colours', class: 'label' %>
-
-        <div class="columns">
+        <!-- PALETTE COLOUR FIELDS -->
+        <div class="is-full">
+          <span class="label">Colours</span>
+          <div class="field colour_field_container">
           <%= f.fields_for :colours do |clr| %>
-              <div class="column is-half">
-                <div class="control"><%= clr.color_field :hex_code, class: 'input colour_input' %></div>
-              </div>
+            <%= clr.color_field :hex_code, class: 'colour_input', value: '#ff6699' %>
+          <% end %>
+          </div>
+        </div>
+        <div class="field">
+            <%= f.submit "Create Palette", class: "button is-primary" %>
+            <input type="hidden" name="palette[user_id]" value="<%= @user.id %>">
           <% end %>
         </div>
-      </div>
+    <!-- END -->
 
+    <!--  PALETTE SELECTORS -->
+    <div class="field selector is-centered">
+      <%= form_tag "/palettes/new/", method: "get" do %>
       <div class="field">
-        <div class="control">
-          <%= f.submit "Create", class: "button is-primary" %>
-          <input type="hidden" name="palette[user_id]" value="<%= @user.id %>">
-        <% end %>
-    
-     <div class="field">
-        <div class="control">
-        <%= form_tag "/palettes/new/", method: "get" do %>
-          <div class="select">
-            <select name="num" id="num">
-              <option value='4'>4 colours</option>
-              <option value='5'>5 colours</option>
-              <option value='6'>6 colours</option>
-              <option value='7'>7 colours</option>
-              <option value='8'>8 colours</option>
-              <option value='9'>9 colours</option>
-              <option value='10'>10 colours</option>
-            </select>
-            <input type="submit" value="Change colours" class="button is-primary">
-          </div>
-          <%end%>
-        </div> 
-       </div>
-
+        <div class="select">
+          <select name="num" id="num">
+            <option value='4'>4 colours</option>
+            <option value='5'>5 colours</option>
+            <option value='6'>6 colours</option>
+            <option value='7'>7 colours</option>
+            <option value='8'>8 colours</option>
+            <option value='9'>9 colours</option>
+            <option value='10'>10 colours</option>
+          </select>
         </div>
       </div>
+        <div class="field">
+          <input type="submit" value="Change colours" class="button is-primary">
+        </div>
+      <%end%>
+    </div>
+      </div>
 
-  </div>
+    </div>
 </div>
