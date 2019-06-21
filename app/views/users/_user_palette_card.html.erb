@@ -1,0 +1,62 @@
+<div class="palette_card <%= palette_card_class %>">
+  <div class="palette <%= palette_container_class %>">
+    <% palette.colours.each do |colour| %>
+      <div class="colour" style="background-color: <%= colour.hex_code %>">
+        <a class="palette_link" href="<%= palette_path(palette) %>">
+          <span class="colour_hex">
+            <%= colour.hex_code %>
+          </span>
+        </a>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="sidebar">
+    <div class="like_container">
+
+      <% if palette.likes.find_by(user_id: @user.id)%>
+        <%= form_tag new_like_path(palette), method: :delete do %>
+          <%= hidden_field_tag :user_id, user.id %>
+          <%= hidden_field_tag :palette_id, palette.id %>
+          <%= hidden_field_tag :redirect, 'user' %>
+
+          <%= button_tag(type: "submit", class: "card_heart") do %>
+              <i class="fas fa-heart"></i>
+          <% end %>
+
+        <% end %>
+      <% else %>
+        <%= form_tag palette_likes_path(palette), method: :post do %>
+          <%= hidden_field_tag :user_id, user.id %>
+          <%= hidden_field_tag :palette_id, palette.id %>
+          <%= hidden_field_tag :redirect, 'user' %>
+
+          <%= button_tag(type: "submit", class: "card_heart") do %>
+              <i class="far fa-heart"></i>
+          <% end %>
+
+        <% end %>
+      <% end %>
+
+      <span class="likes_number">
+        <%= palette.likes.count %>
+      </span>
+    </div>
+
+    <div class="comment_container">
+      <a href="<%= palette_path(palette) %>">
+        <i class="far fa-comment"></i>
+        <span class="comments_number">
+          <%= palette.comments.count %>
+        </span>
+      </a>
+    </div>
+
+    <!-- <div class="card_date_container">
+      <% user = User.find(palette.user_id) %>
+      <span class="date">
+        <%= palette.created_at.strftime("%d/%m/%Y") %>
+      </span>
+    </div> -->
+</div>
+</div>

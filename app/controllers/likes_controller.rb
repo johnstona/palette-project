@@ -18,6 +18,8 @@ class LikesController < ApplicationController
             redirect_to palette_path(like.palette)
           elsif params[:redirect] == 'main'
             redirect_to palettes_path
+          elsif params[:redirect] == 'user'
+            redirect_to user_path(params[:user_id])
           end
 
         else
@@ -37,6 +39,8 @@ class LikesController < ApplicationController
           redirect_to palette_path(@palette)
         elsif params[:redirect] == 'main'
           redirect_to palettes_path
+        elsif params[:redirect] == 'user'
+          redirect_to user_path(params[:user_id])
         end
     end
 

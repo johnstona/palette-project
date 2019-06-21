@@ -27,44 +27,51 @@
     <% @user_palettes.each do |palette| %>
       <!-- RENDERING PALETTES BASED ON SIZE -->
       <% if palette.colours.size == 4 %>
-        <%= render :partial => 'palettes/palette_card', :locals => {
+        <%= render :partial => 'user_palette_card', :locals => {
                   :palette => palette,
+                  :user => @theuser,
                   :palette_card_class => 'palette_card_four_five ',
                   :palette_container_class => 'palette_four'
         } %>
         <% elsif palette.colours.size == 5 %>
-          <%= render :partial => 'palettes/palette_card', :locals => {
+          <%= render :partial => 'user_palette_card', :locals => {
                     :palette => palette,
+                    :user => @theuser,
                     :palette_card_class => 'palette_card_four_five ',
                     :palette_container_class => 'palette_five'
           } %>
         <% elsif palette.colours.size == 6 %>
-          <%= render :partial => 'palettes/palette_card', :locals => {
+          <%= render :partial => 'user_palette_card', :locals => {
                     :palette => palette,
+                    :user => @theuser,
                     :palette_card_class => 'palette_card_six_seven',
                     :palette_container_class => 'palette_six'
           } %>
         <% elsif palette.colours.size == 7 %>
-          <%= render :partial => 'palettes/palette_card', :locals => {
+          <%= render :partial => 'user_palette_card', :locals => {
                     :palette => palette,
+                    :user => @theuser,
                     :palette_card_class => 'palette_card_six_seven',
                     :palette_container_class => 'palette_seven'
           } %>
         <% elsif palette.colours.size == 8 %>
-          <%= render :partial => 'palettes/palette_card', :locals => {
+          <%= render :partial => 'user_palette_card', :locals => {
                     :palette => palette,
+                    :user => @theuser,
                     :palette_card_class => 'palette_card_eight_nine',
                     :palette_container_class => 'palette_eight'
           } %>
         <% elsif palette.colours.size == 9 %>
-          <%= render :partial => 'palettes/palette_card', :locals => {
+          <%= render :partial => 'user_palette_card', :locals => {
                     :palette => palette,
+                    :user => @theuser,
                     :palette_card_class => 'palette_card_eight_nine',
                     :palette_container_class => 'palette_nine'
           } %>
         <% elsif palette.colours.size == 10 %>
-          <%= render :partial => 'palettes/palette_card', :locals => {
+          <%= render :partial => 'user_palette_card', :locals => {
                     :palette => palette,
+                    :user => @theuser,
                     :palette_card_class => 'palette_card_eight_nine',
                     :palette_container_class => 'palette_ten'
           } %>
