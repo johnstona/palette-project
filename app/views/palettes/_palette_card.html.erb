@@ -14,13 +14,29 @@
   <div class="sidebar">
     <div class="like_container">
 
-      <a href="<%= palette_path(palette) %>">
-        <% if palette.likes.find_by(user_id: @user.id) %>
-          <i class="fas fa-heart"></i>
-        <% else %>
-          <i class="far fa-heart"></i>
+      <% if palette.likes.find_by(user_id: @user.id)%>
+        <%= form_tag new_like_path(palette), method: :delete do %>
+          <%= hidden_field_tag :user_id, @user.id %>
+          <%= hidden_field_tag :palette_id, palette.id %>
+          <%= hidden_field_tag :redirect, 'main' %>
+
+          <%= button_tag(type: "submit", class: "card_heart") do %>
+              <i class="fas fa-heart"></i>
+          <% end %>
+
         <% end %>
-      </a>
+      <% else %>
+        <%= form_tag palette_likes_path(palette), method: :post do %>
+          <%= hidden_field_tag :user_id, @user.id %>
+          <%= hidden_field_tag :palette_id, palette.id %>
+          <%= hidden_field_tag :redirect, 'main' %>
+
+          <%= button_tag(type: "submit", class: "card_heart") do %>
+              <i class="far fa-heart"></i>
+          <% end %>
+
+        <% end %>
+      <% end %>
 
       <span class="likes_number">
         <%= palette.likes.count %>

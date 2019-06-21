@@ -12,11 +12,17 @@ class LikesController < ApplicationController
         if already_liked?
             flash[:errors] = ["You have already liked this palette"]
         elsif logged_in?
-            like = @palette.likes.create(user_id: @user.id)
+          like = @palette.likes.create(user_id: @user.id)
+
+          if params[:redirect] == 'palette'
             redirect_to palette_path(like.palette)
+          elsif params[:redirect] == 'main'
+            redirect_to palettes_path
+          end
+
         else
-            flash[:errors] = ["You must be logged in to like this palette"]
-            redirect_to palette_path(@palette)
+          flash[:errors] = ["You must be logged in to like this palette"]
+          redirect_to palette_path(@palette)
         end
     end
 
@@ -26,13 +32,18 @@ class LikesController < ApplicationController
         else
             @like.destroy
         end
-        redirect_to palette_path(@palette)
+
+        if params[:redirect] == 'palette'
+          redirect_to palette_path(@palette)
+        elsif params[:redirect] == 'main'
+          redirect_to palettes_path
+        end
     end
 
     private
 
     def like_params
-        params.require(:like).permit(:palette_id, :user_id)
+        params.require(:like).permit(:palette_id, :user_id, :redirect)
     end
 
     def already_liked?
@@ -46,5 +57,5 @@ class LikesController < ApplicationController
     def find_like
         @like = @palette.likes.find_by(user_id: current_user.id)
     end
-    
+
 end

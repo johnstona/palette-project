@@ -49,6 +49,13 @@ class PalettesController < ApplicationController
       @palettes = Palette.all
     end
 
+    def palette_like
+      palette = Palette.find(params[:id])
+      palette.likes.build(user_id: params[:user_id], palette_id: params[:id])
+
+      redirect_to palettes_path
+    end
+
     private
 
     def palette_params

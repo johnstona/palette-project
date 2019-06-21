@@ -23,11 +23,28 @@
         <% end %>
       </div>
       <div class="likes_container">
-        <% already_liked = @palette.likes.find_by(user_id: @user.id)%>
-        <% if already_liked%>
-          <%= button_to 'Unlike', palette_like_path(@palette), method: :delete, class: "button like_button" %>
+        <% if @palette.likes.find_by(user_id: @user.id)%>
+          <%= form_tag palette_like_path(@palette), method: :delete do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <%= hidden_field_tag :palette_id, @palette.id %>
+            <%= hidden_field_tag :redirect, 'palette' %>
+
+            <%= button_tag(type: "submit", class: "button") do %>
+                <i class="fas fa-heart"></i>
+            <% end %>
+
+          <% end %>
         <% else %>
-          <%= button_to 'Like', palette_likes_path(@palette), method: :post, class: "button like_button" %>
+          <%= form_tag palette_likes_path(@palette), method: :post do %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <%= hidden_field_tag :palette_id, @palette.id %>
+            <%= hidden_field_tag :redirect, 'palette' %>
+
+            <%= button_tag(type: "submit", class: "button") do %>
+                <i class="far fa-heart"></i>
+            <% end %>
+
+          <% end %>
         <% end %>
       </div>
       <div class="comments_container">
