@@ -1,0 +1,34 @@
+<% @palette.colours.each do |colour| %>
+  <% @bgcolour << colour.hex_code %>
+<% end %>
+
+<% if @bgcolour.length == 4 %>
+  <% @bgcolour << @bgcolour.sample %>
+  <% @bgcolour %>
+<% elsif @bgcolour.length > 5 %>
+    <% @bgcolour.sample(5) %>
+<%else %>
+
+<%end%>
+
+<div class="header" style="background-color: <%= @bgcolour[0]%>">
+  <p class="title" style="color: <%= @bgcolour[1] %>">PALETTEPAL</p>
+  <div class="icon1"><i class="fas fa-home" style="color: <%= @bgcolour[2] %>"></i>
+  <i class="fas fa-user" style="color: <%= @bgcolour[2] %>"></i>
+  <i class="fas fa-paint-brush" style="color: <%= @bgcolour[2] %>"></i>
+  </div>
+</div>
+
+<div class="boxed" style="border-color: <%= @bgcolour[3] %>">
+  <br>
+  <p class="text">This text is what the palette would look like on a website.</p>
+  <br>
+  <br>
+  <p class="goBack"><%= link_to "Go Back", palette_path(@palette) %></p>
+  <br>
+  <br><br>
+  </div>
+  <br>
+  <br>
+  <div class="last_container" style="background-color: <%= @bgcolour[4] %>">
+    </div>

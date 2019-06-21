@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   get "/terms", to: 'static#terms'
   get "/cookies", to: 'static#cookies'
   get "/mit", to: 'static#mit'
+  # get '/palettes/palette_test/:id', to: 'palettes#palette_test', as: 'test_palette'
+  get '/palette_test/thingy/:id', to: 'palette_test#thingy', as: 'more_palette'
+  # get '/static/palette_test/:id', to: 'static#palette_test', as: 'test_palette'
+
 
 
   resources :colours

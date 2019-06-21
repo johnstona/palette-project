@@ -1,0 +1,2 @@
+module PaletteTestControllerHelper
+end

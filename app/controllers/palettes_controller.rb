@@ -1,6 +1,6 @@
 class PalettesController < ApplicationController
 
-    before_action :find_palette, only: [:show, :edit, :destroy]
+    before_action :find_palette, only: [:show, :edit, :destroy, :palette_test]
     before_action :current_user
     before_action :liked_by_user?, only: [:show]
 
@@ -26,6 +26,11 @@ class PalettesController < ApplicationController
       @colours = Colour.all
       @comments = Comment.all || ""
       @comment = Comment.new
+    end
+
+    def palette_test
+      # @paletteTest = Palette.find_by params[:id]
+      @bgcolour = []
     end
 
     def edit

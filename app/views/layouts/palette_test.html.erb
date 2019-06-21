@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+          <title>Admin</title>
+          <%= stylesheet_link_tag 'https://gist.githubusercontent.com/hcatlin/1027867/raw/dc4f0c2ebf8e58026e65edc9fbabe812c3621805/reset.scss', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+          <%= stylesheet_link_tag "palette_test", :media => "all" %>
+          <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+          <%= javascript_include_tag 'https://kit.fontawesome.com/2b91fecf2f.js', 'data-turbolinks-track': 'reload' %>
+          <%= csrf_meta_tags %>
+        </head>
+        <body>
+            <%= yield %>
+            <footer class="footer">
+              <div class="columns">
+                <div class="column">
+                  <p class="footer-link"><%= link_to "About", "/about" %></p>
+                  <p class="footer-link"><%= link_to "Terms & Conditions", "/terms" %></p>
+                  <p class="footer-link"><%= link_to "Cookies Notice", "/cookies" %></p>
+                </div>
+                <div class="column has-text-centered">
+                  This website is under the <%= link_to "MIT", "/mit" %> license.
+                </div>
+              </div>
+            </footer>
+        </body>
+    </html>

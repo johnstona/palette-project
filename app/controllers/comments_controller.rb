@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
             flash[:errors] = ["You must be logged in to make a comment"]
             redirect_to palette_path(@palette)
         end
-        flash[:errors] = comment.errors.full_messages
+        flash[:errors] = ["Invalid comment"]
     end
 
     def destroy

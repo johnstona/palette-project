@@ -1,0 +1,13 @@
+
+<% @palette.colours.each do |colour| %>
+  <% @bgcolour << colour.hex_code %>
+<% end %>
+
+<% if @bgcolour.length == 4 %>
+  <% @bgcolour << @bgcolour.sample %>
+  <%= @bgcolour %>
+<% elsif @bgcolour.length > 5 %>
+    <%= @bgcolour.sample(5) %>
+<%else %>
+  happy
+<%end%>
